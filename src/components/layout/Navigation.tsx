@@ -16,7 +16,7 @@ const Navigation = () => {
 
 export default Navigation;
 
-const Link = ({ linkName, link }: { linkName: string; link?: string }) => {
+const Link = ({ linkName }: { linkName: string }) => {
   return (
     <li className="btn-sm py-3 h-full w-[70px] text-gray-800 hover:bg-gray-50 cursor-pointer ">
       {linkName}

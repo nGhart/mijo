@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import image from "../../assets/app.png";
 import HeaderOne from "../../components/common/HeaderOne";
 import Reveal from "../../components/common/Reveal";

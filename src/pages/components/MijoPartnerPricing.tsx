@@ -1,5 +1,5 @@
 import HeaderOne from "../../components/common/HeaderOne";
-import Reveal from "../../components/common/Reveal";
+// import Reveal from "../../components/common/Reveal";
 
 const MijoPartnerPricing = () => {
   const scrollToSection = (id: string) => {
@@ -32,9 +32,9 @@ const MijoPartnerPricing = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 p-6">
+    <div className="max-w-[800px] mx-auto space-y-8 p-6 lg:p-0">
       <HeaderOne title="One-off Commission Free Payments " subtitle="" />
-      <div className="grid grid-cols-1 gap-6 lg:hidden">
+      <div className="block lg:hidden space-y-4">
         {pricingData.map((p, index) => (
           <PricingCard
             tier={p.tier}
@@ -45,9 +45,10 @@ const MijoPartnerPricing = () => {
           />
         ))}
       </div>
-      <div className="hidden lg:grid lg:grid-cols-3 gap-6">
-        {pricingData.map((p, index) => (
-          <Reveal key={index} direction="left" delay={index * 150}>
+      <div className="hidden lg:block space-y-8">
+        <div className="grid grid-cols-3 gap-8">
+          {pricingData.map((p, index) => (
+            // <Reveal key={index} direction="left" delay={index * 150}>
             <PricingCard
               tier={p.tier}
               key={index}
@@ -55,8 +56,9 @@ const MijoPartnerPricing = () => {
               description={p.description}
               handleScroll={() => handleScroll("started")}
             />
-          </Reveal>
-        ))}
+            // </Reveal>
+          ))}
+        </div>
       </div>
     </div>
   );
