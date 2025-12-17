@@ -20,7 +20,7 @@ const ActionButton = ({
   `}
       >
         <img src={image} alt="" className="w-7 h-7 object-contain" />
-        <div className="flex flex-col leading-none">
+        <div className="flex flex-col leading-none text-white">
           <p className="text-[10px] opacity-80">Download on the</p>
           <p className="text-sm font-semibold">{text}</p>
         </div>
