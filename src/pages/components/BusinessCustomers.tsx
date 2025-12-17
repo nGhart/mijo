@@ -4,6 +4,7 @@ import delivery from "../../assets/delivery.svg";
 import locate from "../../assets/locate.svg";
 import gh from "../../assets/gh.svg";
 import support from "../../assets/support.svg";
+import Reveal from "../../components/common/Reveal";
 
 const BusinessCustomers = () => {
   const customers = [
@@ -40,19 +41,11 @@ const BusinessCustomers = () => {
           revenue by partnering with Mijo. Whether you run a retail store,
           pharmacy, e-commerce shop, or restaurant, Mijo helps you move smarter."
       />
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 items-center pb-8 text-center lg:text-left">
-        <p className="text-3xl text-primary font-semibold">
-          Partner with Mijo to Power Your Business Logistics
-        </p>
-        <p className="text-sm">
-          Scale your delivery operations, boost customer satisfaction, and grow
-          revenue by partnering with Mijo. Whether you run a retail store,
-          pharmacy, e-commerce shop, or restaurant, Mijo helps you move smarter.
-        </p>
-      </div> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {customers.map((c, index) => (
-          <BusinessCard c={c} key={index} />
+          <Reveal key={index} direction="up" delay={index * 150}>
+            <BusinessCard c={c} key={index} />
+          </Reveal>
         ))}
       </div>
     </div>

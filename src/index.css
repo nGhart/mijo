@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0090bf;
+  --color-primary: #184181;
+  --color-dark: #0d2d60;
   --color-secondary: #f89e48;
-  --color-primary-200: #4aaaca;
+  --color-primary-200: #1356c2;
 }
 body {
   font-family: "Nunito", sans-serif;
@@ -14,33 +15,20 @@ body {
 }
 
 .lineGrad {
-  background: #0090bf;
-  background: linear-gradient(
-    360deg,
-    rgba(0, 144, 191, 1) 0%,
-    #cbeaf5 50%,
-    #d4eef73e 100% /* rgba(255, 255, 255, 1) 100% */
-  );
+  background: white;
 }
 
-/* .bg-primary {
-  background-color: #0090bf;
+@media (min-width: 1024px) {
+  .lineGrad {
+    background: linear-gradient(
+      360deg,
+      #0b316f 0%,
+      #cbeaf5 50%,
+      #d4eef73e 100%
+    );
+  }
 }
-.bg-primary-200 {
-  background-color: #4aaaca;
-}
-.text-primary {
-  color: #0090bf;
-}
-.bg-secondary {
-  background-color: #f89e48;
-}
-.text-secondary {
-  color: #f89e48;
-}
-.border-primary-200 {
-  border-color: #4aaaca;
-} */
+
 .card-gradient {
   background: #c7e8f2;
   background: linear-gradient(
@@ -50,3 +38,7 @@ body {
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+/* --color-primary: #0090bf;
+    --color-primary-200: #4aaaca;
+    --color-dark: #016d91; */

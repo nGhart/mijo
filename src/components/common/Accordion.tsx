@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 type AccordionItem = {
   title: string;
@@ -7,9 +7,10 @@ type AccordionItem = {
 
 type AccordionProps = {
   items: AccordionItem[];
+  title: string;
 };
 
-const Accordion = ({ items }: AccordionProps) => {
+const Accordion: React.FC<AccordionProps> = ({ items, title }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
@@ -17,11 +18,12 @@ const Accordion = ({ items }: AccordionProps) => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-2">
+    <div className="w-full max-w-2xl mx-auto space-y-2 border rounded-lg p-4 border-blue-100">
+      <p className="text-primary font-bold">{title}</p>
       {items.map((item, index) => (
         <div
           key={index}
-          className="overflow-hidden border-b-[0.5px] pb-3 border-blue-100"
+          className="overflow-hidden border-t-[0.5px] pb-3 border-blue-100"
         >
           <button
             onClick={() => toggleItem(index)}
@@ -29,10 +31,9 @@ const Accordion = ({ items }: AccordionProps) => {
           >
             <span className="font-bold text-gray-800 flex-1">{item.title}</span>
             <span
-              className={`colorDiv ml-2 min-h-6 min-w-6 flex items-center justify-center rounded-full 
-                  bg-primary-200 transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110
-                  transform ${openIndex === index ? "rotate-180" : "rotate-0"} 
-                   pointer-events-none`}
+              className={`colorDiv ml-2 min-h-6 min-w-6 flex items-center justify-center rounded-full text-white bg-primary-200 transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110 transform ${
+                openIndex === index ? "rotate-180" : "rotate-0"
+              } pointer-events-none`}
             >
               {openIndex === index ? "−" : "+"}
             </span>

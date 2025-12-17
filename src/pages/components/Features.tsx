@@ -1,4 +1,3 @@
-import React from "react";
 import FeaturesCard from "../../components/common/FeaturesCard";
 import Reveal from "../../components/common/Reveal";
 import HeaderOne from "../../components/common/HeaderOne";
@@ -27,7 +26,7 @@ const Features = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="mx-auto space-y-8 p-8">
       <HeaderOne
         title="Mobility That Matches Your Lifestyle."
         subtitle="Getting around or sending packages in Ghana shouldn’t be a hassle. Mijo makes transport and delivery simple, affordable, and right on time with options that work for everyone."

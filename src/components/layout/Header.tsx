@@ -1,57 +1,95 @@
-import Navigation from "./Navigation";
+import { useState } from "react";
 import Logo from "../common/Logo";
+import { Menu, X } from "lucide-react";
+import Button from "../common/Button";
 
-const Header = () => {
+export default function Header() {
+  const [open, setOpen] = useState(false);
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleScroll = (id: string) => {
+    scrollToSection(id);
+    setOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between mt-4">
-        <div className="flex items-center">
-          <Logo />
-        </div>
-
+        <Logo width={60} />
         <nav className="hidden md:flex bg-white rounded-full px-6 py-2 shadow-inner border border-blue-100">
           <ul className="flex items-center gap-6 text-gray-700 text-sm font-medium">
             <li
-              className="cursor-pointer hover:text-blue-600"
-              onClick={() => scrollToSection("features")}
+              onClick={() => handleScroll("features")}
+              className="cursor-pointer hover:text-dark"
             >
               Features
             </li>
             <li
-              className="cursor-pointer hover:text-blue-600"
-              onClick={() => scrollToSection("customers")}
+              onClick={() => handleScroll("customers")}
+              className="cursor-pointer hover:text-dark"
             >
               Customers
             </li>
             <li
-              className="cursor-pointer hover:text-blue-600"
-              onClick={() => scrollToSection("business")}
+              onClick={() => handleScroll("business")}
+              className="cursor-pointer hover:text-dark"
             >
-              Business
+              Businesses
             </li>
             <li
-              className="cursor-pointer hover:text-blue-600"
-              onClick={() => scrollToSection("faqs")}
+              onClick={() => handleScroll("faqs")}
+              className="cursor-pointer hover:text-dark"
             >
               FAQs
             </li>
           </ul>
         </nav>
-        <div className="">
-          <button className="bg-primary text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-white shadow-">
-            Get Started
-          </button>
+        <div className="hidden md:block">
+          <Button onClick={() => handleScroll("started")} text="Get Started" />
         </div>
+        <button
+          className="md:hidden text-gray-700"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {open && (
+        <div className="md:hidden bg-white shadow-lg border-t border-gray-200">
+          <ul className="flex flex-col gap-4 px-6 py-6 text-gray-700 text-sm font-medium">
+            <li
+              onClick={() => handleScroll("features")}
+              className="cursor-pointer hover:text-dark"
+            >
+              Features
+            </li>
+            <li
+              onClick={() => handleScroll("customers")}
+              className="cursor-pointer hover:text-dark"
+            >
+              Customers
+            </li>
+            <li
+              onClick={() => handleScroll("business")}
+              className="cursor-pointer hover:text-dark"
+            >
+              Businesses
+            </li>
+            <li
+              onClick={() => handleScroll("faqs")}
+              className="cursor-pointer hover:text-dark"
+            >
+              FAQs
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

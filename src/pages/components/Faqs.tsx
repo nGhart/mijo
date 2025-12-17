@@ -1,67 +1,206 @@
-import React from "react";
 import Accordion from "../../components/common/Accordion";
 import HeaderOne from "../../components/common/HeaderOne";
+import Reveal from "../../components/common/Reveal";
 
 const Faqs = () => {
-  const questions = [
+  const faqs = [
     {
-      title: "How is my ride fare calculated?",
-      content:
-        "Fares are calculated based on a base rate, the estimated time and distance of the trip, and current demand. You will always see an upfront price estimate before you confirm your booking. Please note that tolls and surcharges may be added to the final amount.",
+      title: "About MIJO",
+      questions: [
+        {
+          title: "Why MIJO?",
+          content:
+            "MIJO is a Ghanaian-owned, tech-enabled delivery service integrated into the GhanaPostGPS app. The name 'MIJO' comes from an Ewe phrase meaning 'let’s go'. The service allows individuals and businesses to send packages securely and efficiently using precise digital addresses.",
+        },
+        {
+          title: "How do I download and install the MIJO app?",
+          content:
+            "MIJO is not a separate app. It is a feature within the updated GhanaPostGPS app. Existing users simply need to update the app. New users can download GhanaPostGPS from the Google Play Store or Apple App Store.",
+        },
+        {
+          title: "How do I create an account?",
+          content:
+            "If you already have the GhanaPostGPS app, just update it. New users can download the app and register using their Ghana Card and a valid Ghanaian phone number.",
+        },
+        {
+          title: "How can I contact MIJO Services?",
+          content:
+            "Call: 0540127407 / 0257962003. WhatsApp: 0257962003. Social Media: Facebook, Twitter, Instagram.",
+        },
+      ],
     },
     {
-      title: "Can I schedule a ride in advance?",
-      content:
-        "Yes! You can schedule a ride up to 30 days in advance. simply tap the clock icon next to the 'Where to?' box, set your desired pickup date and time, and confirm your location.",
+      title: "App and Features",
+      questions: [
+        {
+          title: "How do I request a delivery?",
+          content:
+            "Open the GhanaPostGPS App, tap on 'MIJO Delivery', enter pickup and drop-off digital addresses, add a delivery note, and confirm your request.",
+        },
+        {
+          title: "How are delivery fees calculated?",
+          content:
+            "Delivery fees are based on distance and partner tier (Express or Standard). The final fee is shown before confirmation.",
+        },
+        {
+          title: "Can I cancel a delivery?",
+          content:
+            "Yes, you can cancel for free before dispatch. A cancellation fee may apply if a Mijo Partner is already en route.",
+        },
+        {
+          title: "Can I change the destination after booking?",
+          content: "Yes, you can modify the destination after booking.",
+        },
+        {
+          title: "Can I schedule a delivery?",
+          content:
+            "Currently, MIJO supports only on-demand deliveries. Scheduled deliveries will be introduced soon.",
+        },
+      ],
     },
     {
-      title: "What payment methods do you accept?",
-      content:
-        "We accept major credit and debit cards, digital wallets (such as Apple Pay, Google Pay, and PayPal), and in select regions, cash payments. You can manage your payment methods in the 'Wallet' section of the app.",
+      title: "Account and Data",
+      questions: [
+        {
+          title: "How do I sign up for MIJO?",
+          content:
+            "Use the GhanaPostGPS app with your Ghana Card and a valid phone number.",
+        },
+        {
+          title: "How do I update my profile?",
+          content:
+            "Go to the 'Account' section in the app to edit your details.",
+        },
+        {
+          title: "Can I delete my account?",
+          content: "Yes. Request deletion via the in-app support.",
+        },
+        {
+          title: "What security features are in place?",
+          content:
+            "All Mijo Partners are vetted based on requested documents. Real-time tracking is available, and users can rate and give feedback on Mijo Partners in-app.",
+        },
+      ],
     },
     {
-      title: "How do I track my delivery order?",
-      content:
-        "Once your order is confirmed, you can track it in real-time through the app. You will see the courier's location on the map, their estimated time of arrival, and updates at every stage—from pickup to drop-off.",
+      title: "Payment and Pricing",
+      questions: [
+        {
+          title: "What payment methods are accepted?",
+          content:
+            "MIJO Wallet, Mobile Money (MTN, Vodafone, AirtelTigo), and Cash.",
+        },
+        {
+          title: "Why is my price higher than expected?",
+          content:
+            "Delays, distance changes, or traffic conditions may affect the final pricing.",
+        },
+        {
+          title: "Issue with cancellation fee?",
+          content:
+            "You can report any issue via the in-app Help & Support section.",
+        },
+        {
+          title: "How do I get a delivery receipt?",
+          content:
+            "Receipts are sent via email (if provided) or can be found in your delivery history.",
+        },
+      ],
     },
     {
-      title: "I left an item in a vehicle. How can I retrieve it?",
-      content:
-        "If you lost an item, go to the 'Your Trips' section in the app menu, select the trip where the item was lost, and tap 'I lost an item.' This will allow you to contact the driver directly to arrange a return. If you cannot reach the driver, contact our support team.",
+      title: "Using MIJO",
+      questions: [
+        {
+          title: "How do I contact the delivery partner?",
+          content:
+            "You can contact the delivery partner via in-app messaging or calling options after your request is matched.",
+        },
+        {
+          title: "What if the delivery partner's vehicle is in poor condition?",
+          content:
+            "Report the issue using the rating and feedback feature or contact MIJO support.",
+        },
+        {
+          title: "What safety features are in place?",
+          content:
+            "Mijo Partner and vehicle details are shared, and each delivery request includes a PIN code.",
+        },
+        {
+          title: "How can I track my driver?",
+          content:
+            "Tracking starts once the Mijo Partner accepts your request.",
+        },
+        {
+          title: "What if I cancel my delivery?",
+          content:
+            "There is no charge if cancelled before dispatch. A cancellation fee applies if the Mijo Partner is already en route.",
+        },
+        {
+          title: "How do I rate my experience?",
+          content:
+            "After delivery, you can rate and provide feedback using the pop-up prompt.",
+        },
+        {
+          title: "How do I check my delivery history?",
+          content: "Go to 'Trip History' in the app.",
+        },
+        {
+          title: "Can I request multiple stops?",
+          content:
+            "Yes, you can add multiple stops during the delivery request setup.",
+        },
+        {
+          title: "How long will my driver wait?",
+          content:
+            "The standard wait time is three (3) minutes. Additional wait time may incur extra charges.",
+        },
+      ],
     },
     {
-      title: "What safety features does the app offer?",
-      content:
-        "Your safety is our priority. Our app includes an in-app emergency button, the ability to share your live trip status with trusted contacts, ride check-ins if a vehicle stops unexpectedly, and 24/7 safety support.",
-    },
-    {
-      title: "Can I change my destination after the trip has started?",
-      content:
-        "Yes, you can edit your destination mid-trip. Tap the destination bar on your screen and enter the new address. The driver will be automatically updated, and your fare will be adjusted based on the new distance and time.",
-    },
-    {
-      title: "How do I apply a promo code?",
-      content:
-        "To use a promo code, open the menu and select 'Wallet' or 'Payment.' Scroll down to 'Promotions,' tap 'Add Promo Code,' and enter your code. Valid discounts will automatically apply to your next eligible ride or delivery.",
-    },
-    {
-      title: "What should I do if my delivery is missing items?",
-      content:
-        "If your order arrived with missing or incorrect items, please go to the 'Orders' tab, select the relevant order, and tap 'Get Help.' Select 'Missing or Incorrect Items,' and our support team will issue a refund or arrange a redelivery.",
-    },
-    {
-      title: "How do I delete my account?",
-      content:
-        "If you wish to delete your account, go to 'Settings,' select 'Privacy,' and tap 'Delete Account.' You will be asked to confirm your identity. Please note that account deletion is permanent and you will lose your ride history and rewards.",
+      title: "Partner / Driver",
+      questions: [
+        {
+          title: "How do I become a MIJO Partner?",
+          content:
+            "Download the MIJO Partner App, register with valid documents, and begin delivering after approval.",
+        },
+        {
+          title: "How does the Partner App work?",
+          content:
+            "Once verified, partners receive delivery requests via the app. Accept, pick up, deliver, and receive payment directly in your wallet or mobile money.",
+        },
+        {
+          title: "What if I encounter a difficult customer?",
+          content:
+            "Use the in-app contact options or report the incident to MIJO support.",
+        },
+        {
+          title: "How much do I pay to start working?",
+          content:
+            "After document verification, partners receive a one-day free trial. After the trial, a daily subscription fee of GHS 24 is required to continue accepting delivery requests.",
+        },
+        {
+          title: "How many deliveries can I make in a day?",
+          content:
+            "Once the GHS 24 daily subscription is paid, partners can make unlimited deliveries for that day. The subscription expires at 12:00 midnight.",
+        },
+      ],
     },
   ];
+
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 p-4">
       <HeaderOne
         title="Frequently asked questions"
         subtitle="Clear, simple answers to help you get started."
       />
-      <Accordion items={questions} />
+      <div className="space-y-4">
+        {faqs.slice(0, 4).map((section, i) => (
+          <Reveal direction="up" delay={i * 150}>
+            <Accordion items={section.questions} title={section.title} />
+          </Reveal>
+        ))}
+      </div>
     </div>
   );
 };

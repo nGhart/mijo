@@ -5,6 +5,11 @@ export default function Reveal({
   direction = "up",
   delay = 0,
   duration = 700,
+}: {
+  children: React.ReactNode;
+  direction?: "up" | "down" | "left" | "right";
+  delay?: number;
+  duration?: number;
 }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -23,7 +28,6 @@ export default function Reveal({
     return () => observer.disconnect();
   }, []);
 
-  // Choose initial translate direction
   const directions = {
     up: "translate-y-6",
     down: "-translate-y-6",

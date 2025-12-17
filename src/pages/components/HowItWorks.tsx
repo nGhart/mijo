@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import image from "../../assets/image.jpg";
-import image2 from "../../assets/image2.jpg";
+import image from "../../assets/app.png";
 import HeaderOne from "../../components/common/HeaderOne";
+import Reveal from "../../components/common/Reveal";
 
 const HowItWorks = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -15,7 +15,7 @@ const HowItWorks = () => {
     },
     {
       step: 2,
-      image: image2,
+      image: image,
       title: "Select your preferred MIJO",
       subtitle:
         "Choose a standard car for a quick pick up,  an executive car for a more formal occasion or a motorbike or van depending on your delivery needs.",
@@ -29,14 +29,14 @@ const HowItWorks = () => {
     },
     {
       step: 4,
-      image: image2,
+      image: image,
       title: "Enjoy your MIJO",
       subtitle:
         "Once your driver arrives, it’s time to sit back, relax, and enjoy the ride with GhanaPost Mijo..",
     },
   ];
   return (
-    <div className="lineGrad space-y-8 py-8 mask-[radial-gradient(circle,white_60%,transparent_100%)]">
+    <div className="lineGrad space-y-8 p-8 mask-[radial-gradient(circle,white_60%,transparent_100%)]">
       <div className="max-w-4xl mx-auto space-y-8 grid grid-cols-1 lg:grid-cols-3">
         <HeaderOne
           title="How It Works"
@@ -44,24 +44,26 @@ const HowItWorks = () => {
           centered={false}
         />
       </div>
-      <div className="max-w-4xl mx-auto space-y-8 grid grid-cols-1 lg:grid-cols-5">
-        <div className="space-y-4 col-span-2">
+      <div className="max-w-4xl mx-auto flex flex-row items-center gap-8 pb-[50px]">
+        <div className="space-y-4 col-span-2 flex-2/5">
           {steps.map((step, index) => (
-            <StepItem
-              key={step?.step}
-              number={step?.step}
-              title={step?.title}
-              subtitle={step?.subtitle}
-              index={index}
-              setCurrentImage={setCurrentImage}
-              currentImage={currentImage}
-            />
+            <Reveal direction="up" delay={200}>
+              <StepItem
+                key={step?.step}
+                number={step?.step}
+                title={step?.title}
+                subtitle={step?.subtitle}
+                index={index}
+                setCurrentImage={setCurrentImage}
+                currentImage={currentImage}
+              />
+            </Reveal>
           ))}
         </div>
-        <div className="hidden lg:block lg:col-span-3 px-6">
+        <div className="hidden lg:block lg:col-span-3 px-6 flex-3/5 ">
           <img
             src={steps[currentImage].image}
-            className="mask-[radial-gradient(circle,white_60%,transparent_100%)] h-full"
+            className="max-h-[470px] w-full object-contain mask-[radial-gradient(circle,white_60%,transparent_100%)]"
           />
         </div>
       </div>
@@ -78,15 +80,22 @@ const StepItem = ({
   index,
   setCurrentImage,
   currentImage,
+}: {
+  number: number;
+  title: string;
+  subtitle: string;
+  index: number;
+  setCurrentImage: any;
+  currentImage: number;
 }) => {
   return (
     <div
       className={`flex gap-4 items-start p-4 rounded-xl hover:bg-gray-50/50 transition-all duration-200 cursor-pointer ${
-        index == currentImage ? "bg-white/60" : ""
+        index == currentImage ? "bg-white/60" : "bg-white/20"
       }`}
       onClick={() => setCurrentImage(index)}
     >
-      <div className="min-w-10 max-w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
+      <div className="min-w-10 max-w-10 h-10 rounded-full bg-primary/70 text-white flex items-center justify-center font-bold text-lg">
         {number}
       </div>
       <div>
