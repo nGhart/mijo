@@ -189,7 +189,7 @@ const Faqs = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 p-4">
+    <div className="max-w-4xl mx-auto space-y-8 p-4 py-[100px] lg:py-[120px]">
       <HeaderOne
         title="Frequently asked questions"
         subtitle="Clear, simple answers to help you get started."

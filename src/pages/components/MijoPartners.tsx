@@ -40,7 +40,7 @@ const MijoPartners = () => {
     },
   ];
   return (
-    <div className="max-w-4xl mx-auto space-y-8 p-6">
+    <div className="max-w-4xl mx-auto space-y-8 p-6 py-[100px] lg:py-[120px]">
       <HeaderOne
         title="Drive. Deliver. Earn – Become A Mijo Partner"
         subtitle="Join a growing network of trusted riders and couriers powering movement across Ghana. Whether you drive a car or ride a bike, Mijo gives you the tools and flexibility to earn on your terms."

@@ -36,35 +36,37 @@ const HowItWorks = () => {
     },
   ];
   return (
-    <div className="lineGrad space-y-8 p-8 mask-[radial-gradient(circle,white_60%,transparent_100%)]">
-      <div className="max-w-4xl mx-auto space-y-8 grid grid-cols-1 lg:grid-cols-3">
-        <HeaderOne
-          title="How It Works"
-          subtitle="Ride & Delivery Made Easy "
-          centered={false}
-        />
-      </div>
-      <div className="max-w-4xl mx-auto flex flex-row items-center gap-8 pb-[50px]">
-        <div className="space-y-4 col-span-2 flex-2/5">
-          {steps.map((step, index) => (
-            <Reveal direction="up" delay={200}>
-              <StepItem
-                key={step?.step}
-                number={step?.step}
-                title={step?.title}
-                subtitle={step?.subtitle}
-                index={index}
-                setCurrentImage={setCurrentImage}
-                currentImage={currentImage}
-              />
-            </Reveal>
-          ))}
-        </div>
-        <div className="hidden lg:block lg:col-span-3 px-6 flex-3/5 ">
-          <img
-            src={steps[currentImage].image}
-            className="max-h-[470px] w-full object-contain mask-[radial-gradient(circle,white_60%,transparent_100%)]"
+    <div className="lineGrad p-8 mask-[radial-gradient(circle,white_60%,transparent_100%)] py-[100px] lg:py-[120px]">
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3">
+          <HeaderOne
+            title="How It Works"
+            subtitle="Ride & Delivery Made Easy "
+            centered={false}
           />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 items-center justify-center">
+          <div className="col-span-1 lg:col-span-2 space-y-8">
+            {steps.map((step, index) => (
+              <Reveal direction="up" delay={200}>
+                <StepItem
+                  key={step?.step}
+                  number={step?.step}
+                  title={step?.title}
+                  subtitle={step?.subtitle}
+                  index={index}
+                  setCurrentImage={setCurrentImage}
+                  currentImage={currentImage}
+                />
+              </Reveal>
+            ))}
+          </div>
+          <div className="hidden lg:flex justify-center items-center px-6 col-span-3">
+            <img
+              src={steps[currentImage].image}
+              className="max-h-[600px] w-full object-contain mask-[radial-gradient(circle,white_60%,transparent_100%)]"
+            />
+          </div>
         </div>
       </div>
     </div>

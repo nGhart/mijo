@@ -34,7 +34,7 @@ const BusinessCustomers = () => {
     },
   ];
   return (
-    <div className="max-w-4xl mx-auto space-y-12 p-6">
+    <div className="max-w-4xl mx-auto space-y-12 p-6 py-[100px] lg:py-[120px]">
       <HeaderOne
         title="Partner with Mijo to Power Your Business Logistics"
         subtitle="Scale your delivery operations, boost customer satisfaction, and grow

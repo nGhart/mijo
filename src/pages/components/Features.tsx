@@ -26,7 +26,7 @@ const Features = () => {
     },
   ];
   return (
-    <div className="mx-auto space-y-8 p-8">
+    <div className="mx-auto space-y-8 p-8 py-[100px] lg:py-[120px]">
       <HeaderOne
         title="Mobility That Matches Your Lifestyle."
         subtitle="Getting around or sending packages in Ghana shouldn’t be a hassle. Mijo makes transport and delivery simple, affordable, and right on time with options that work for everyone."

@@ -32,7 +32,7 @@ const MijoPartnerPricing = () => {
   ];
 
   return (
-    <div className="max-w-[800px] mx-auto space-y-8 p-6 lg:p-0">
+    <div className="max-w-[800px] mx-auto space-y-8 p-6 lg:p-0 py-[100px] lg:py-[120px]">
       <HeaderOne title="One-off Commission Free Payments " subtitle="" />
       <div className="block lg:hidden space-y-4">
         {pricingData.map((p, index) => (

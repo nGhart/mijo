@@ -6,7 +6,7 @@ import Reveal from "../../components/common/Reveal";
 
 const GetStarted = () => {
   return (
-    <div className="max-w-4xl mx-auto space-y-8 p-6">
+    <div className="max-w-4xl mx-auto space-y-8 p-6 py-[100px] lg:py-[120px]">
       <HeaderOne
         title="Get Started with Mijo"
         subtitle="Built by Ghanaians, for Ghanaians.
