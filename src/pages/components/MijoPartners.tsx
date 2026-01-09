@@ -1,8 +1,8 @@
-import flexible from "../../assets/flexible.png";
-import onboarding from "../../assets/onboarding.png";
-import payouts from "../../assets/payouts.png";
-import support from "../../assets/support.png";
-import bonus from "../../assets/bonus.png";
+import flexible from "../../assets/flexible.jpg";
+import onboarding from "../../assets/onboarding.jpg";
+import payouts from "../../assets/payouts.jpg";
+import support from "../../assets/support.jpg";
+import bonus from "../../assets/bonus.jpg";
 import HeaderOne from "../../components/common/HeaderOne";
 import Reveal from "../../components/common/Reveal";
 

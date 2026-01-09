@@ -1,6 +1,6 @@
 import Button from "../../components/common/Button";
 import Reveal from "../../components/common/Reveal";
-import handImage from "../../assets/hand.png";
+import handImage from "../../assets/hands2.png";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
